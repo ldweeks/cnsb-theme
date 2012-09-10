@@ -25,6 +25,8 @@
 ?>
 <?php
 
+//dpm($fields['field_chart'], "Chart Field");
+
 $download_links = array();
 
 if (isset($fields['title'])):
@@ -42,11 +44,19 @@ if (isset($fields['field_demo'])):
 endif;
 
 if (isset($fields['field_chart'])):
-  $download_links[] = array(
-    'title' => t('Chart'),
-    'href' => $fields['field_chart']->content,
-    'target' => "_blank",
-  );
+
+  $charts = explode(",", $fields['field_chart']->content);
+
+  foreach ($charts as $chart) {
+    $chart = explode("|", $chart);
+
+    $download_links[] = array(
+      'title' => t($chart[1]),
+      'href' => $chart[0],
+      'target' => "_blank",
+    );
+  }
+
 endif;
 
 if (isset($fields['field_lead_sheet'])):
