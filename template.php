@@ -243,3 +243,6 @@ function cnsb_theme_preprocess_node(&$vars) {
   }
 }
 
+function cnsb_theme_process_page(&$vars) {
+  $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;
+}
