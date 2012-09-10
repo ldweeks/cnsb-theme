@@ -108,6 +108,8 @@
       </nav>
     <?php endif; ?>
 
+    <a href="http://dev3.clearnotesongbook.com/media-player/clearnote-songbook-player" title="<?php print t('Listen Now!'); ?>" target="_blank">Play Audio.</a>
+
     <?php print render($page['header']); ?>
 
   </header>
