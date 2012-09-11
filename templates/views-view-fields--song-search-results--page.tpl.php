@@ -29,21 +29,21 @@
 
 $download_links = array();
 
-if (isset($fields['title'])):
+if (isset($fields['title'])) {
   print $fields['title']->wrapper_prefix;
     print $fields['title']->label_html;
     print $fields['title']->content;
   print $fields['title']->wrapper_suffix;
-endif;
+}
 
-if (isset($fields['field_demo'])):
+if (isset($fields['field_demo'])) {
   print $fields['field_demo']->wrapper_prefix;
     print $fields['field_demo']->label_html;
     print $fields['field_demo']->content;
   print $fields['field_demo']->wrapper_suffix;
-endif;
+}
 
-if (isset($fields['field_chart'])):
+if (isset($fields['field_chart'])) {
 
   $charts = explode(",", $fields['field_chart']->content);
 
@@ -56,40 +56,62 @@ if (isset($fields['field_chart'])):
       'target' => "_blank",
     );
   }
+}
 
-endif;
+if (isset($fields['field_lead_sheet'])) {
 
-if (isset($fields['field_lead_sheet'])):
-  $download_links[] = array(
-    'title' => t('Lead Sheet'),
-    'href' => $fields['field_lead_sheet']->content,
-    'target' => "_blank",
-  );
-endif;
+  $lead_sheets = explode(",", $fields['field_lead_sheet']->content);
 
-if (isset($fields['field_powerpoint'])):
-  $download_links[] = array(
-    'title' => t('Powerpoint'),
-    'href' => $fields['field_powerpoint']->content,
-    'target' => "_blank",
-  );
-endif;
+  foreach ($lead_sheets as $lead_sheet) {
+    $lead_sheet = explode("|", $lead_sheet);
 
-if (isset($fields['field_sheet_music'])):
-  $download_links[] = array(
-    'title' => t('Sheet Music'),
-    'href' => $fields['field_sheet_music']->content,
-    'target' => "_blank",
-  );
-endif;
+    $download_links[] = array(
+      'title' => t($lead_sheet[1]),
+      'href' => $lead_sheet[0],
+      'target' => "_blank",
+    );
+  }
+}
+
+if (isset($fields['field_powerpoint'])) {
+
+  $powerpoints = explode(",", $fields['field_powerpoint']->content);
+
+  foreach ($powerpoints as $powerpoint) {
+    $powerpoint = explode("|", $powerpoint);
+
+    $download_links[] = array(
+      'title' => t($powerpoint[1]),
+      'href' => $powerpoint[0],
+      'target' => "_blank",
+    );
+  }
+}
+
+if (isset($fields['field_sheet_music'])) {
+
+  $music_sheets = explode(",", $fields['field_sheet_music']->content);
+
+  foreach ($music_sheets as $music_sheet) {
+    $music_sheet = explode("|", $music_sheet);
+
+    $download_links[] = array(
+      'title' => t($music_sheet[1]),
+      'href' => $music_sheet[0],
+      'target' => "_blank",
+    );
+  }
+}
 
 if (!empty($download_links)) {
   print theme('ctools_dropdown', array('title' => t('Downloads'), 'links' => $download_links));
 }
 
-if (isset($fields['field_buy_song'])):
+if (isset($fields['field_buy_song'])) {
   print $fields['field_buy_song']->wrapper_prefix;
     print $fields['field_buy_song']->label_html;
     print $fields['field_buy_song']->content;
   print $fields['field_buy_song']->wrapper_suffix;
-endif; ?>
+}
+ 
+?>
