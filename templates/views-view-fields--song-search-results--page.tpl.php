@@ -53,7 +53,7 @@ if (isset($fields['field_chart'])) {
     $download_links[] = array(
       'title' => t($chart[1]),
       'href' => $chart[0],
-      'target' => "_blank",
+      'attributes' => array('target' => "_blank"),
     );
   }
 }
@@ -68,7 +68,7 @@ if (isset($fields['field_lead_sheet'])) {
     $download_links[] = array(
       'title' => t($lead_sheet[1]),
       'href' => $lead_sheet[0],
-      'target' => "_blank",
+      'attributes' => array('target' => "_blank"),
     );
   }
 }
@@ -83,7 +83,7 @@ if (isset($fields['field_powerpoint'])) {
     $download_links[] = array(
       'title' => t($powerpoint[1]),
       'href' => $powerpoint[0],
-      'target' => "_blank",
+      'attributes' => array('target' => "_blank"),
     );
   }
 }
@@ -98,7 +98,7 @@ if (isset($fields['field_sheet_music'])) {
     $download_links[] = array(
       'title' => t($music_sheet[1]),
       'href' => $music_sheet[0],
-      'target' => "_blank",
+      'attributes' => array('target' => "_blank"),
     );
   }
 }
