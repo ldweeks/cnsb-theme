@@ -46,6 +46,23 @@ a:hover{
 	
 }
 
+/* Header Override */
+
+.headerContainer #logo{
+	display:block;
+	background:url(../images/MainLogo_trans.png) top left no-repeat;
+	width:153px;
+	height:153px;
+	position:absolute;
+	left:400px;
+	z-index:99;
+	top:8px;
+}
+
+.headerContainer #logo img{
+	display:none;
+}
+
 /* Page Override */
 
 
@@ -57,11 +74,11 @@ a:hover{
 .region-header{
 	display:block;
 	position:absolute;
-	background:#cccccc;
+
 	width:320px;
 	overflow:hidden;
 	right:0;
-	top:120px;
+	top:90px;
 }
 
 .region-header #edit-search-api-views-fulltext{
@@ -88,8 +105,8 @@ a:hover{
 	border:0;
 	display:inline-block;
 	position:absolute;
-	top:16px;
-	right:0;
+	top:20px;
+	right:10px;
 }
 
 .region-header a{
@@ -102,8 +119,14 @@ a:hover{
 	margin-right:5px;
 	display:inline-block;
 	position:absolute;
-	top:16px;
-	right:30px;
+	top:20px;
+	right:34px;
+}
+
+.global-filter .form-item.form-type-select, .global-filter .form-item.form-type-textfield {
+    display: block !important;
+	float:left;
+	margin-right:5px;
 }
 
 #page {
@@ -117,28 +140,65 @@ a:hover{
 } 
 
 #page #header{
-	background:#FFFFFF;
+	background:url(../images/BannerBack_main.jpg) top center repeat-x;
+	height:188px;
 	position:relative;
+
 }
 
 #page #header .headerContainer{
 	width:960px;
 	margin:0 auto;
 	position:relative;
+	text-align:center;
+}
+
+#page #header .mainNav{
+	position:absolute;
+	width:100%;
+	background:url(../images/MainNav_back.jpg) 500px 0px no-repeat;
+	left:0;
+	top:152px;
+	height:36px;
+	overflow:hidden;
 }
 
 #page #header #navigation {
     height: 3em;
-    position: relative;
-    top:auto;
+    position:relative;
     width:960px;
 	margin:0 auto;
+	background:url(../images/NavBack.png) 136px 0px no-repeat;
+}
+
+#page #header #navigation ul.menu li{
+	margin:0;
+	padding:0;
+	margin-right:-30px;
+}
+
+#page #header #navigation ul.menu li.first{
+	margin-left:7px;
+	margin-right:-37px;
 }
 
 #page #header #navigation ul.menu li a{
 	display:block;
-	padding:10px 20px;
-	background:#efefef;
+	padding:10px 60px;
+	color:#FFFFFF;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+#page #header #navigation ul.menu li.leaf:hover,
+#page #header #navigation ul.menu li.active-trail{
+	background:url(../images/Nav_select.png) top left no-repeat;
+}
+
+#page #header #navigation ul.menu li a:hover,
+#page #header #navigation ul.menu li.active-trail a{
+	background:url(../images/Nav_select-tail.png) top right no-repeat;
+	color:#FFFFFF;	
 }
 
 .aboveMain table{
@@ -162,5 +222,8 @@ a:hover{
 .aboveMain table td .views-field-field-featured-image img{
 	width:100%;
 }
+
+
+
 
 
