@@ -160,18 +160,14 @@ function cnsb_theme_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function cnsb_theme_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  // Remove read more variable
+  unset($variables['content']['links']['node']['#links']['node-readmore']);
 
-  // Optionally, run node-type-specific preprocess functions, like
-  // cnsb_theme_preprocess_node_page() or cnsb_theme_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables, $hook);
-  }
+  // Add my new variable
+  $variables['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>',
+    array('!title' => $variables['node_url'],));
 }
-// */
 
 /**
  * Override or insert variables into the comment templates.
