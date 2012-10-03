@@ -113,6 +113,10 @@
     print render($content);
   ?>
 
+  <?php if ($teaser == true): ?>
+    <?php print $continue_reading; ?>
+  <?php endif; ?>
+
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>

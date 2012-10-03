@@ -218,10 +218,11 @@ function cnsb_theme_preprocess_node(&$vars) {
   $vars['submitted'] =  t('by !username on !datetime',
     array('!username' => $vars['name'], '!datetime' => $vars['date'],));
 
-  // Change "Read More" to "Continue Reading".
-  if ($vars['view_mode'] == 'teaser') {
-    $variables['content']['links']['node']['#links']['node-readmore']['title'] = 'Continue Reading<span class="element-invisible"> about ' . $vars['title'] . '</span>';
-  }
+  // Remove the existing "Read More" link.
+  unset($vars['content']['links']['node']['#links']['node-readmore']);
+
+  // Add "Continue Reading" link.
+  $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $vars['node_url'],));
 }
 
 function cnsb_theme_process_page(&$vars) {
