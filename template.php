@@ -220,7 +220,7 @@ function cnsb_theme_preprocess_node(&$vars) {
 
   // Change "Read More" to "Continue Reading".
   if ($vars['view_mode'] == 'teaser') {
-    $variables['content']['links']['node']['#links']['node-readmore']['title'] = 'Continue Reading<span class="element-invisible"> about ' . $variables['title'] . '</span>';
+    $variables['content']['links']['node']['#links']['node-readmore']['title'] = 'Continue Reading<span class="element-invisible"> about ' . $vars['title'] . '</span>';
   }
 }
 
