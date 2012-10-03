@@ -161,12 +161,8 @@ function cnsb_theme_preprocess_page(&$variables, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function cnsb_theme_preprocess_node(&$variables, $hook) {
-  // Remove read more variable
-  unset($variables['content']['links']['node']['#links']['node-readmore']);
-
-  // Add my new variable
-  $variables['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>',
-    array('!title' => $variables['node_url'],));
+  // Modify the read more variable so that I don't have to change anything else.
+  $variables['content']['links']['node']['#links']['node-readmore'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $variables['node_url'],));
 }
 
 /**
