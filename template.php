@@ -153,19 +153,6 @@ function cnsb_theme_preprocess_page(&$variables, $hook) {
 // */
 
 /**
- * Override or insert variables into the node templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("node" in this case.)
- */
-function cnsb_theme_preprocess_node(&$variables, $hook) {
-  // Modify the read more variable so that I don't have to change anything else.
-  $variables['content']['links']['node']['#links']['node-readmore'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $variables['node_url'],));
-}
-
-/**
  * Override or insert variables into the comment templates.
  *
  * @param $variables
@@ -227,11 +214,13 @@ function cnsb_theme_preprocess_block(&$variables, $hook) {
  */
 
 function cnsb_theme_preprocess_node(&$vars) {
+  // Change "submitted by" to "by".
   $vars['submitted'] =  t('by !username on !datetime',
     array('!username' => $vars['name'], '!datetime' => $vars['date'],));
 
+  // Change "Read More" to "Continue Reading".
   if ($vars['view_mode'] == 'teaser') {
-    $variables['content']['links']['node']['#links']['node-readmore']['title'] = 'Read more...<span class="element-invisible"> about ' . $variables['title'] . '</span>';
+    $variables['content']['links']['node']['#links']['node-readmore']['title'] = 'Continue Reading<span class="element-invisible"> about ' . $variables['title'] . '</span>';
   }
 }
 
