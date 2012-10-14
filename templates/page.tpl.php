@@ -156,7 +156,6 @@
 
   </div><!-- /#main -->
 
-  <?php dpm($sidebar_first, "sidebar_first"); ?>
   <?php print render($page['footer']); ?>
 
 </div><!-- /#page -->
