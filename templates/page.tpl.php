@@ -113,18 +113,18 @@
    </div>
   </header>
   <div class="aboveMain">
-      
+
 	  <?php print render($page['highlighted']); ?>
-      
+
       <div class="breadcrumb">
       <?php print $breadcrumb; ?>
     </div>
   </div>
   <div id="main">
-	
+
 
     <div id="content" class="column" role="main">
-      
+
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -156,6 +156,7 @@
 
   </div><!-- /#main -->
 
+  <?php dpm($sidebar_first, "sidebar_first"); ?>
   <?php print render($page['footer']); ?>
 
 </div><!-- /#page -->
