@@ -146,11 +146,18 @@ function cnsb_theme_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function cnsb_theme_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  if (isset($variables['node']->type)) {
+    $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+  }
+
+  $node = menu_get_object();
+  if ($node->type == 'song') {
+    if (isset($node->field_demo)) {
+      $variables['demo'] = field_view_field('node', $node, 'field_demo', 'default');
+    }
+  }
 }
-// */
 
 /**
  * Override or insert variables into the comment templates.
@@ -214,6 +221,12 @@ function cnsb_theme_preprocess_block(&$variables, $hook) {
  */
 
 function cnsb_theme_preprocess_node(&$vars) {
+
+  // Change the date into the following format for blog posts: Friday, Nov 30, 2012
+  if ($vars['type'] == 'blog_post') {
+    $vars['date'] = format_date($vars['created'], 'blog_post');
+  }
+
   // Change "submitted by" to "by".
   $vars['submitted'] =  t('by !username on !datetime',
     array('!username' => $vars['name'], '!datetime' => $vars['date'],));
@@ -223,8 +236,4 @@ function cnsb_theme_preprocess_node(&$vars) {
 
   // Add "Continue Reading" link.
   $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $vars['node_url'],));
-}
-
-function cnsb_theme_process_page(&$vars) {
-  $vars['theme_hook_suggestions'][] = 'page__'. $vars['node']->type;
 }

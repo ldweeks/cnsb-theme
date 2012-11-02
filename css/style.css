@@ -2,32 +2,59 @@
 /* CSS Document */
 
 body{
-	font-family:Arial, Helvetica, sans-serif;
-	color:#333333;
-	font-size:10pt;
-	line-height:18px;
-	background:url(../images/background_main.jpg) top repeat-x fixed;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#444444;
+	font-size:14px;
+	line-height:22px;
+	background:url(../images/background_main-light.jpg);
+}
+
+a{
+	color:#5FA7B9;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#8b3215;
+	text-decoration:none;
+	
 }
 
 h1, h1 a{
-	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:18pt;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+	font-size:24pt;
 	font-weight:normal;
-	
-	color:#d37412;
+	color:#5fa7b9;
 	text-decoration:none;
+	background:url(../images/h1_back.png) 0 12px no-repeat;
+	padding-left:28px;
+
+}
+
+.front h1{
+	font-size:12pt;
+	background:#8d623b;
+	margin:12px 0;
+	text-transform:none;
+	padding-left:1100px;
+	margin-left:-1100px;
+	color:#FFFFFF;
+	border-bottom-right-radius:20px;
 }
 
 h1 a:hover{
 	color:#8b3215;
 	text-decoration:underline;
 }
+		
 
 h2, h2 a{
-	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:14pt;
-	color:#8b3215;
+	font-size:18pt;
+	color:#764039;
 	text-decoration:none;
+	font-weight:normal;
+	text-transform:uppercase;
 }
 
 h2 a:hover{
@@ -35,14 +62,7 @@ h2 a:hover{
 	text-decoration:underline;
 }
 
-a{
-	color:#4093bf;
-	text-decoration:none;
-}
-
-a:hover{
-	color:#8b3215;
-	text-decoration:none;
+#content.column p{
 	
 }
 
@@ -85,6 +105,54 @@ a:hover{
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size:10px;
 	text-transform:uppercase;
+}
+
+body, html{
+	height:100%;
+}
+
+#page{
+	min-height:100%;
+	position: relative;
+}
+
+* html #page{
+	height: 100%;
+}
+
+#main{
+	padding-bottom: 9em;
+
+}
+
+#footer{
+	background:#EFEFEF;
+	position: relative;
+	margin-top: -7.5em;
+	min-height:9em;
+}
+
+#footer .block{
+	width:960px;
+	margin:0 auto;
+}
+
+#footer .block ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	display:inline-block;
+}
+
+#footer .block ul li{
+	list-style:none;
+	display:inline;
+	margin-right:10px;
+}
+
+.not-logged-in .wysiwyg-toggle-wrapper,
+.not-logged-in .filter-wrapper{
+	display:none;
 }
 
 /* Page Override */
@@ -166,17 +234,18 @@ a:hover{
 
 .front #page #main{
 	padding-top:0;
-	margin:-20px auto 0 auto;
+	margin:10px auto 0 auto;
 
 } 
 
 #page .aboveMain{
 	width:100%;
-	background:#FFFFFF;
+	border-top:6px solid #2f9bb7;
+	background:url(../images/background_main.jpg);
 }
 
 #page .aboveMain table{
-	margin-top:0;
+	margin:0;
 }
 
 #page .aboveMain .region, #page .aboveMain .breadcrumb{
@@ -186,11 +255,31 @@ a:hover{
 	
 }
 
+#page .aboveMain .breadcrumb li{
+	padding:4px 8px 5px 8px;
+	color:#666666;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+}
+
+#page .aboveMain .breadcrumb li a{
+	color:#764039;
+}
+
+.front #page .aboveMain .region .block{
+	margin:0;
+}
+
 #page #header{
 	background:url(../images/BannerBack_main.jpg) top center repeat-x;
 	height:188px;
 	position:relative;
+}
 
+.page-blog #page #header{
+	background:url(../images/BannerBack_WarHorn.jpg) top center repeat-x;
+	height:188px;
+	position:relative;
 }
 
 #page #header .headerContainer{
@@ -214,6 +303,11 @@ a:hover{
     position:relative;
     width:960px;
 	margin:0 auto;
+	
+}
+
+#page #header #navigation .region-navigation{
+	width:1000px;
 }
 
 #page #header #navigation ul.menu{
@@ -242,44 +336,45 @@ a:hover{
 	display:block;
 	position:relative;
 	width:auto;
-	padding:10px 30px;
+	padding:10px 41px;
 	color:#FFFFFF;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size:16px;
 	border:0;
 }
 
-#page #header #navigation ul.menu li a.active{
-	color:#FFFFFF;	
-	background:#5fa7b9;
+#page #header #navigation ul.menu li.last a{
+	padding:10px 50px 10px 41px;
 }
 
 #page #header #navigation ul.menu li a:hover{
 	color:#FFFFFF;	
-	background:#5fa7b9;
+	background:url(../images/background_main-blue-darker.jpg);
 }
 
-.front h1#page-title{
-	
-	background:url(../images/Home_BlogBack.png) right no-repeat;
-	width:510px;
+#page #header #navigation ul.menu li a.active{
+	color:#FFFFFF;	
+	background:url(../images/background_main-blue.jpg);
+}
+
+
+
+#page #header #navigation ul.menu li ul{
+	margin-top:4px;
 	position:absolute;
-	left:-710px;
-	color:#FFFFFF;
-	font-size:18px;
-	padding:10px 0 10px 710px;
+}
+
+#page #header #navigation ul.menu li li{
+    background:#FFFFFF;
 	
+}
+
+#page #header #navigation ul.menu li li a{
+	color:#333333;
 }
 
 .front .sidebars .block-title{
-	background:url(../images/Home_AboutBack.png) left no-repeat;
-	width:510px;
-	position:absolute;
-	right:-800px;
-	color:#FFFFFF;
-	font-size:18px;
-	padding:10px 510px 10px 40px;
-	top:-5px;
+
 }
 
 .aboveMain table{
@@ -292,31 +387,81 @@ a:hover{
 	position:relative;
 	float:left;
 	width:278px;
-	border:1px solid #EFEFEF;
+	border:1px solid #CCCCCC;
+	border-bottom-left-radius:10px;
 	min-height:240px;
-	background:#FFFFFF;
-	box-shadow:0px 3px 5px #EFEFFF;
+	background:#EFEFEF;
+	box-shadow:0px 3px 5px #999999;
 	
 }
 
 .aboveMain table td .views-field-field-featured-image{
-	width:100%;
-	height:120px;
-	overflow:hidden;
+	
 	margin-bottom:10px;
+	border-bottom:3px solid #CCCCCC;
 }
 
 .aboveMain table td .views-field-field-featured-image img{
-	width:100%;
-}
-
-.aboveMain table td .views-field-title{
-	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size:16px;
-	font-style:italic;
 	
 }
 
+.aboveMain table td .views-field-title{
+	position:absolute;
+	top:5px; 
+	left:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	font-size:30px;
+	padding-left:14px;
+	padding-top:8px;
+	line-height:32px;
+}
+
+.aboveMain table td .views-field-title a{
+	color:#FFFFFF;
+}
+
+.aboveMain table td.col-1 .views-field-title{
+	background:url(../images/Icon_song-small.png) top left no-repeat;
+}
+
+.aboveMain table td.col-2 .views-field-title{
+	background:url(../images/Icon_liturgy-small.png) top left no-repeat;
+}
+
+.aboveMain table td.col-3 .views-field-title{
+	background:url(../images/Icon_blog-small.png) top left no-repeat;
+}
+
+.aboveMain table td .views-field-field-featured-teaser{
+	padding:8px;
+	margin-top:5px;
+	border:1px dotted #CCCCCC;
+	border-radius:3px;
+	min-height:65px;
+}
+
+.one-sidebar #content .view-display-id-page, .one-sidebar #content .field-name-body{
+	background:url(../images/background_main-lighter.jpg);
+	padding:10px;
+	box-shadow:0 5px 7px #CCCCCC;
+	border-top-right-radius:20px;
+	margin-bottom:20px;
+}
+
+.front.one-sidebar #content .field-name-body, 
+.page-blog #content .field-name-body{
+	background:none;
+	padding:inherit;
+	box-shadow:none;
+	border-radius:0;
+}
+
+.front.one-sidebar #content .field-name-body .embedded-video, 
+.page-blog #content .field-name-body .embedded-video{
+	max-width:100%;
+	overflow:hidden;
+}
 
 .sidebar-first #content {
     margin-left: 30%;
@@ -338,20 +483,8 @@ a:hover{
     width: 26%;
 }
 
-.sidebars .sidebar{
-	margin-top:-10px;
-}
-
 .sidebars .sidebar, .sidebars .sidebar .menu{
 	padding:0;
-}
-
-.sidebars .sidebar ul{
-	box-shadow:3px 0 5px #EFEFEF;
-}
-
-.sidebars .sidebar ul ul{
-	box-shadow:0 0 0;
 }
 
 .sidebars .sidebar ul ul, .sidebars .sidebar ul li{
@@ -364,10 +497,84 @@ a:hover{
 	
 }
 
+.sidebars #block-block-2{
+	padding:5px;
+	margin:0 0 15px 0;
+}
+
+.sidebars #block-block-2 p{
+	padding:0;
+	margin:0;
+}
+
+.sidebars #block-block-2 p a{
+	display:block;
+	text-align:center;
+	background:#ffd87f;
+	color:#333333;
+	padding:5px;
+	font-size:11px;
+	text-transform:uppercase;
+	
+}
+
+.sidebars #block-block-2 p a:hover{
+	background:#bfa977;
+	color:#FFFFFF;
+}
+
+.sidebars .sidebar ul li.expanded .item-list{
+	margin-top:5px;
+}
+
+.sidebars #block-current-search-standard .current-search-item .first{
+	display:none;
+}
+
+.sidebars #block-current-search-standard .current-search-item{
+	padding:0 5px;
+	margin:0;
+}
+
+.sidebars #block-current-search-standard .current-search-item h3{
+	margin:0;
+	margin-top:5px;
+	padding:0 0 0 20px;
+	background:url(../images/Icon_search.png) left no-repeat;
+	font-size:14px;
+	color:#666666;
+}
+
+.sidebars #block-current-search-standard .item-list ul{
+	margin:0;
+	padding:0;
+}
+
+.sidebars #block-current-search-standard .item-list ul li{
+	margin-bottom:4px;
+}
+
+.sidebars .sidebar ul li.expanded a.facetapi-active, 
+.sidebars #block-current-search-standard .item-list ul a{
+	width:14px;
+	height:14px;
+	overflow:hidden;
+	text-indent:-1000px;
+	display:inline-block;
+	margin:5px 5px -2px 5px;
+	background:url(../images/Icon_remove.png) bottom left no-repeat;
+	padding:0;
+}
+
+.sidebar ul li.expanded ul.expanded{
+	padding:0;
+}
+
 .sidebars .sidebar ul li a{
 	padding:3px;
+	padding-left:8px;
+	color:#FFFFFF;
 	display:block;
-	background:#EFEFEF;
 	margin-bottom:1px;
 }
 
@@ -377,45 +584,318 @@ a:hover{
 }
 
 .sidebars .sidebar ul li a:hover{
-	background:#9c3b1d;
+	background:#333;
 	color:#FFFFFF;
 }
 
 .sidebars .sidebar ul li.expanded a{
-	background:#CCCCCC;
+	background:#666;
 	color:#FFFFFF;
 }
 
 .sidebars .sidebar ul li.expanded ul li a{
 	padding:3px;
 	display:block;
-	background:#999999;
+	background:url(../images/Gray_square.jpg) left repeat-y #CCCCCC;
 	margin-bottom:1px;
-	padding-left:10px;
-	color:#FFFFFF;
+	padding-left:14px;
+	color:#333333;
+	font-style:italic;
+	font-weight:normal;
 }
 
-.sidebars .sidebar ul li.expanded ul li a:hover{
+.sidebars .sidebar ul li.expanded ul li a:hover,
+.sidebars .sidebar ul li.expanded ul li a.active{
 	background:#50a4d1;
 	color:#FFFFFF
 }
 
-/* Songbook Section Styles */
+/* Front Page Style */
 
-.page-songbook .sidebars h2{
-	background:#50a4d1;
+article{
+	margin-bottom:20px;
+	padding-bottom:20px;
+	border-bottom:1px dotted #CCCCCC;
+}
+
+article .node-title{
+	
+	
+
+
+	
+}
+
+article .node-title a{
+
+}
+
+article .node-title a:hover{
+	color:#666666;
+	text-decoration:none;
+}
+
+article .submitted{
+	margin-top:-6px;
+	color:#999999;
+	font-style:italic;
+}
+
+article .submitted .username{
+	font-weight:bold;
+}
+
+article .field-type-text-with-summary, article .continue-reading{
+	clear:both;
+	display:block;
+}
+
+article .continue-reading{
+	 margin-bottom:5px;
+}
+
+article .continue-reading a{
+	 padding:4px;
+	 background:url(../images/Icon_forward-small.png) right no-repeat #5fa7b9;
+	 color:#FFFFFF;
+	 padding-right:25px;
+
+}
+
+ article .continue-reading a:hover{
+	 background:url(../images/Icon_forward-small.png) right no-repeat #666666;
+ }
+
+hr{
+	background:none;
+	border:1px dotted #CCCCCC;
+}
+
+/* Blog */
+
+.node-type-blog-post h1{
+	background:none;
+	text-transform:uppercase;
+	font-style:inherit;
+	font-size:52px;
+	line-height:56px;
+	text-align:center;
+	padding:0;
+	padding-bottom:20px;
+}
+
+.node-type-blog-post article .submitted{
+	text-align:center;
+}
+
+article.comment{
+	padding:10px;
+	margin-bottom:10px;
+}
+
+article.comment header{
+	display:block;
+	position:relative;
+}
+
+article.comment header .comment-title{
+	margin-bottom:25px;
+	margin-top:0;
+}
+
+article.comment header .submitted{
+	text-align:left;
+	font-size:.9em;
+	padding:0;
+}
+
+section.comments .form-actions input{
+	padding:4px;
+	background:url(../images/Icon_forward-small.png) right no-repeat #5fa7b9;
+	color:#FFFFFF;
+	padding-right:25px;
+	border:0;
+}
+
+section.comments .form-actions input#edit-preview{
+	background:url(../images/Icon_search-bump.png) right no-repeat #666666;
+	margin-left:6px;
+}
+
+.node-type-blog-post .field-type-taxonomy-term-reference{
+	margin-bottom:10px;
+}
+
+.node-type-blog-post .field-type-taxonomy-term-reference div{
+	width:auto;
+	display:inline;
+	margin-right:5px;
+	color:#666666;
+	font-size:.9em;
+}
+
+/* Songbook Section Styles */
+.section-blog .sidebars .sidebar .block,
+.section-songbook .sidebars .sidebar .block,
+.section-liturgy .sidebars .sidebar .block{
+	background:url(../images/background_main-darken.jpg);
+	margin-bottom:10px;
+	box-shadow:0 3px 5px #999999;
+	border-bottom:1px dashed #888888;
+}
+
+.section-songbook .sidebars .sidebar #block-views-exp-song-search-results-page{
+	background:url(../images/sidebar_wheat.jpg) top left repeat-x;
+}
+
+.section-songbook .sidebars h2,
+.section-blog .sidebars h2{
 	padding:3px 3px 3px 10px;
+	background:url(../images/background_main-dark.jpg);
 	color:#FFFFFF;
 	font-size:14px;
 	font-weight:normal;	
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-style:italic;
+	border-bottom:1px dashed #333333;
+	
+}
+
+.section-songbook #block-current-search-standard{
+	padding-bottom:10px;
+}
+
+.section-blog .sidebars .block .view-content{
+	padding:6px;
+}
+
+.section-blog .sidebars .block .view-content .views-field{
+	margin-bottom:5px;
 }
 
 .page-songbook .sidebars ul.facetapi-facetapi-links{
 	margin:0;
 	padding:0;
 }
+
+.section-songbook .view-song-search-results .ui360-vis{
+	padding-left:0;
+	margin-top:-15px !important;
+}
+
+.section-songbook aside .block.first .views-exposed-form,
+.section-blog aside .block.first .views-exposed-form{
+	padding:5px;
+	
+}
+
+.section-songbook aside .block.first .views-exposed-form input,
+.section-blog aside .block.first .views-exposed-form input{
+	width:150px;
+}
+
+.section-songbook aside .block.first .views-exposed-form input.form-submit,
+.section-blog aside .block.first .views-exposed-form input.form-submit{
+	background:url(../images/h1_back.png) top left no-repeat;
+	height:20px;
+	width:20px;
+	overflow:hidden;
+	text-indent:-1000px;
+	border:0;
+}
+
+.section-songbook aside .block.first .views-exposed-form .views-submit-button,
+.section-blog aside .block.first .views-exposed-form .views-submit-button{
+	padding:0;
+	margin-top:-12px;
+}
+
+.section-songbook .facetapi-limit-link{
+	text-align:center;
+	display:block;
+	width:100%;
+	overflow:hidden;
+	background:#764039;
+	height:16px;
+	color:#FFFFFF;
+	font-size:10px;
+	text-transform:uppercase;
+}
+
+.section-songbook .facetapi-limit-link:after{
+	content:" [ + ]";
+}
+
+.section-songbook .facetapi-limit-link.open:after{
+	content:" [ - ]"
+}
+
+.sm2-canvas,
+.ui360-vis .sm2-360btn, 
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn, 
+.ui360-vis .sm2-360ui.sm2_playing .sm2-360btn{
+	width:25px !important;
+	height:25px !important;
+}
+
+.song{
+	position:relative;
+	padding:10px;
+	background:#EFEFEF;
+	border:2px solid #FFFFFF;
+	border-radius:5px;
+	margin:0 0 10px 0;
+	height:22px;
+	clear:both;
+	display:block;
+}
+
+.song:hover{
+	background:#FFFFFF;
+	border:2px solid #EFEFEF;
+}
+
+.song .ui360.ui360-vis{
+	position:relative;
+}
+
+.song .sm2-360ui{
+	position:absolute;
+	margin:-10px 0 0 -10px;
+
+}
+
+.song .views-field-field-demo{
+	position:absolute;
+	top:29px;
+	left:15px;
+}
+
+.sm2-timing{
+	padding-top:1px;
+	font-size:12px !important;
+	color:#999999;
+	margin-left:12px !important;
+	
+}
+
+.song .views-field-title{
+	margin-left:50px;
+	display:inline-block;
+}
+
+.song .ctools-dropdown{
+	float:right !important;
+	margin-left:10px;
+}
+
+.song .ctools-dropdown .ctools-dropdown-container{
+	border:1px solid #CFCFCF !important;
+	padding:3px !important;
+}
+
+/* Song Page Styles */
+
 
 /* CMS Styles */
 
@@ -428,46 +908,159 @@ a:hover{
 	border-top-left-radius:5px;
 }
 
-blockquote.fancy-quote{
+blockquote{
 	padding:20px;
-	border-radius:14px;
-	background:url(../images/NavBack.png);
-	color:#FFFFFF;
-	box-shadow:3px 0 5px #EFEFFF;
-	margin:10px;
-	margin-left:-15px;
+	border-top-left-radius:20px;
+	border-bottom-right-radius:20px;
+	color:#666666;
+	background:#FFFFFF;
+	box-shadow:3px 0 5px #CCCCCC;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	
 }
 
-blockquote.fancy-quote p{
-	padding:0 !important;
+blockquote p{
+	padding:0;
 	margin:0;
 	margin-bottom:5px;
 	line-height:22px;
 }
 
-blockquote.pull-quote{
-	padding:20px;
-	border-radius:14px;
-	background:#444444;
-	color:#FFFFFF;
-	box-shadow:3px 0 5px #EFEFFF;
+blockquote.blog-intro{
 	margin:10px;
-	margin-right:-10px;
+	padding:15px 0 0 0;
+	border-radius:0;
+	box-shadow:none;
+	border-bottom:1px #CFCFCF dotted;
+	border-top:1px #CFCFCF dotted;
+	font-size:16px;
+	line-height:26px;
+	background:url(../images/background_main-light.jpg);
+}
+
+blockquote.blog-intro p{
+	padding:0 15px 15px 15px;
+	line-height:inherit;
+	color:#333333;
+}
+
+/* Song Details Page */
+
+.section-song #content.column p{
+	padding:0;
+}
+
+.section-song .field-name-field-scripture-reference{
+	padding-left:13px;
+	color:#666666;
+}
+
+em{
+	
+	
+}
+
+.section-song .node-song .group-left{
+	width:640px;
+	margin-top:-20px;
+}
+
+.section-song .node-song .group-left .field-name-field-description{
+	margin-top:11px;
+	padding-top:11px;
+	border-top:1px dotted #CCCCCC;
+}
+
+.section-song .node-song .group-left .field-name-field-description .field-label{
 	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+	color:#5fa7b9;
+	font-size:16px;
+	font-weight:normal;
+}
+
+.section-song .node-song .group-right{
+	width:260px;
+	padding:20px;
+	background:url(../images/background_main-dark.jpg);
+	border-top-left-radius:10px;
+	border-bottom-right-radius:10px;
+	color:#FFFFFF;
+	box-shadow:0 3px 5px #999999;
+}
+
+.section-song .node-song .group-right a{
+	
+	color:#cad9bf;
+}
+.section-song .node-song .group-right a:hover{
+	color:#efefef;
+}
+
+.section-song .node-song .group-right .field-name-field-demo{
+	background:#EFEFEF;
+	padding:5px 0 0 5px;
+	border-radius:3px;
 	display:block;
-	float:right;
-	width:300px;
+	height:30px;
+	margin-bottom:20px;
+}
+
+.section-song .node-song .group-right .field-name-field-demo .ui360.ui360-vis{
+	margin:0;
+	overflow:hidden;
 	
 }
-
-blockquote.pull-quote p{
-	padding:0 !important;
-	margin:0;
-	margin-bottom:5px;
-	line-height:22px;
+.section-song .sm2-inline-list .ui360-vis .sm2-360ui {
+    border:none;
 }
 
+.section-song .sm2-inline-list .ui360-vis:hover a.sm2_link {
+    background:none !important;
+}
+
+.section-song .node-song .group-right .field a{
+	display:block;
+	margin:3px 0 10px 0;
+}
+
+.section-song .node-song .group-right .field-name-field-itunes a{
+	background:url(../images/Icon_Itunes.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+
+.section-song .node-song .group-right .field-name-field-amazon a{
+	background:url(../images/Icon_Amazon.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+
+.section-song .node-song .group-right .field-name-field-bandcamp a{
+	background:url(../images/Icon_DownloadSong.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+.section-song .node-song .group-right .field-name-field-powerpoint a{
+	background:url(../images/Icon_Powerpoint.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+
+.section-song .node-song .group-right .field-name-field-chart a{
+	background:url(../images/Icon_Chords.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+
+.section-song .node-song .group-right .field-name-field-lead-sheet a{
+	background:url(../images/Icon_Lead.png) left no-repeat;
+	padding:3px 0 3px 30px;
+}
+
+.section-song .node-song .group-right .field-name-field-sheet-music a{
+	background:url(../images/Icon_Strings.png) left no-repeat;
+	padding:3px 0 3px 30px; 
+}
+
+#sm2-container{
+	height:1px;
+	overflow:hidden;
+}
 
 
