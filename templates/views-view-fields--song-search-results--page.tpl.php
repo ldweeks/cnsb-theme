@@ -25,16 +25,10 @@
 ?>
 <?php
 
-//dpm($fields['field_chart'], "Chart Field");
+//dpm($fields, "Fields");
 
 $download_links = array();
-
-if (isset($fields['title'])) {
-  print $fields['title']->wrapper_prefix;
-    print $fields['title']->label_html;
-    print $fields['title']->content;
-  print $fields['title']->wrapper_suffix;
-}
+$buy_links = array();
 
 if (isset($fields['field_demo'])) {
   print $fields['field_demo']->wrapper_prefix;
@@ -43,9 +37,16 @@ if (isset($fields['field_demo'])) {
   print $fields['field_demo']->wrapper_suffix;
 }
 
+if (isset($fields['title'])) {
+  print $fields['title']->wrapper_prefix;
+    print $fields['title']->label_html;
+    print $fields['title']->content;
+  print $fields['title']->wrapper_suffix;
+}
+
 if (isset($fields['field_chart'])) {
 
-  $charts = explode(",", $fields['field_chart']->content);
+  $charts = explode("@", $fields['field_chart']->content);
 
   foreach ($charts as $chart) {
     $chart = explode("|", $chart);
@@ -60,7 +61,7 @@ if (isset($fields['field_chart'])) {
 
 if (isset($fields['field_lead_sheet'])) {
 
-  $lead_sheets = explode(",", $fields['field_lead_sheet']->content);
+  $lead_sheets = explode("@", $fields['field_lead_sheet']->content);
 
   foreach ($lead_sheets as $lead_sheet) {
     $lead_sheet = explode("|", $lead_sheet);
@@ -75,7 +76,7 @@ if (isset($fields['field_lead_sheet'])) {
 
 if (isset($fields['field_powerpoint'])) {
 
-  $powerpoints = explode(",", $fields['field_powerpoint']->content);
+  $powerpoints = explode("@", $fields['field_powerpoint']->content);
 
   foreach ($powerpoints as $powerpoint) {
     $powerpoint = explode("|", $powerpoint);
@@ -90,7 +91,7 @@ if (isset($fields['field_powerpoint'])) {
 
 if (isset($fields['field_sheet_music'])) {
 
-  $music_sheets = explode(",", $fields['field_sheet_music']->content);
+  $music_sheets = explode("@", $fields['field_sheet_music']->content);
 
   foreach ($music_sheets as $music_sheet) {
     $music_sheet = explode("|", $music_sheet);
@@ -107,11 +108,47 @@ if (!empty($download_links)) {
   print theme('ctools_dropdown', array('title' => t('Downloads'), 'links' => $download_links));
 }
 
-if (isset($fields['field_buy_song'])) {
-  print $fields['field_buy_song']->wrapper_prefix;
-    print $fields['field_buy_song']->label_html;
-    print $fields['field_buy_song']->content;
-  print $fields['field_buy_song']->wrapper_suffix;
+if (!empty($fields['field_sellfy']->content)) {
+
+  $sheets_for_sale = explode("@", $fields['field_sellfy']->content);
+
+  foreach ($sheets_for_sale as $sheet) {
+    $sheet = explode("|", $sheet);
+
+    $buy_links[] = array(
+      'title' => t($sheet[0]),
+      'href' => $sheet[1],
+      'attributes' => array('target' => "_blank"),
+    );
+  }
 }
- 
+
+if (!empty($fields['field_itunes_url']->content)) {
+  $buy_links[] = array(
+    'title' => 'iTunes',
+    'href' => $fields['field_itunes_url']->content,
+    'attributes' => array('target' => "_blank"),
+  );
+}
+
+if (!empty($fields['field_amazon_url']->content)) {
+  $buy_links[] = array(
+    'title' => 'Amazon',
+    'href' => $fields['field_amazon_url']->content,
+    'attributes' => array('target' => "_blank"),
+  );
+}
+
+if (!empty($fields['field_bandcamp_url']->content)) {
+  $buy_links[] = array(
+    'title' => 'Bandcamp',
+    'href' => $fields['field_bandcamp_url']->content,
+    'attributes' => array('target' => "_blank"),
+  );
+}
+
+if (!empty($buy_links)) {
+  print theme('ctools_dropdown', array('title' => t('Buy'), 'links' => $buy_links));
+}
+
 ?>

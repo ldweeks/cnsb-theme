@@ -1,6 +1,5 @@
 <?php
-/**
- * @file
+/* @file
  * Zen theme's implementation to display a single Drupal page.
  *
  * Available variables:
@@ -126,6 +125,8 @@
     <div id="content" class="column" role="main">
       
       <a id="main-content"></a>
+      <?php print render($demo); ?>
+      <?php print render($content['field_demo']); ?>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
