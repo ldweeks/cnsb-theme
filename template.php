@@ -222,8 +222,16 @@ function cnsb_theme_preprocess_block(&$variables, $hook) {
 
 function cnsb_theme_preprocess_node(&$vars) {
 
-  // Change the date into the following format for blog posts: Friday, Nov 30, 2012
   if ($vars['type'] == 'blog_post') {
+    // Create variables for the user profile bio and picture.
+    $user_profile = profile2_load_by_user($vars['uid']);
+
+    if (isset($user_profile['user_profile'])) {
+      $vars['profile2_bio'] = field_view_field('profile2', $user_profile['user_profile'], 'field_bio', 'default');
+      $vars['profile2_pic'] = field_view_field('profile2', $user_profile['user_profile'], 'field_picture', 'default');
+    }
+
+    // Change the date into the following format for blog posts: Friday, Nov 30, 2012
     $vars['date'] = format_date($vars['created'], 'blog_post');
   }
 
