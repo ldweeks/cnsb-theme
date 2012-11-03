@@ -78,9 +78,9 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
     <?php endif; ?>
 
-
      <div class="headPlayer"><a href="http://dev3.clearnotesongbook.com/media-player/clearnote-songbook-player" title="<?php print t('Listen Now!'); ?>" target="_blank">Play Audio</a></div>
 
+    <div class="socialMedia"><a href="https://twitter.com/CNSongbook" target="_blank"><img src="<?php print base_path() . drupal_get_path('theme', 'cnsb_theme') . '/images/twitter_logo.png'; ?>"></a><a href="https://www.facebook.com/ClearnoteSongbook" target="_blank"><img src="<?php print base_path() . drupal_get_path('theme', 'cnsb_theme') . '/images/fb_logo.png'; ?>"></a></div>
     <?php print render($page['header']); ?>
    </div>
    <div class="mainNav">
