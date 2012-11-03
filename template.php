@@ -236,4 +236,19 @@ function cnsb_theme_preprocess_node(&$vars) {
 
   // Add "Continue Reading" link.
   $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $vars['node_url'],));
+
+  // Add social media share buttons
+  $social_media = "<span class='st_facebook_hcount' displayText='Facebook'></span><span class='st_fblike_hcount' displayText='Facebook Like'></span><span class='st_twitter_hcount' displayText='Tweet'></span><span class='st_pinterest_hcount' displayText='Pinterest'></span><span class='st_email_hcount' displayText='Email'></span><span class='st_sharethis_hcount' displayText='ShareThis'></span>";
+
+  switch ($vars['type']) {
+    case 'blog_post':
+      $vars['social_media'] = $social_media;
+      break;
+    case 'liturgy_page':
+      $vars['social_media'] = $social_media;
+      break;
+    case 'song':
+      $vars['social_media'] = $social_media;
+      break;
+  }
 }

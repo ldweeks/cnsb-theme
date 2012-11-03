@@ -112,6 +112,12 @@
     hide($content['links']);
     print render($content);
   ?>
+  
+  <?php if (isset($social_media)): ?>
+    <div class="sharethis-buttons">
+      <?php print render($social_media); ?>
+    </div>
+  <?php endif; ?>
 
   <?php if ($teaser == true): ?>
     <?php print $continue_reading; ?>
