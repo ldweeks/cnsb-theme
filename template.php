@@ -222,6 +222,20 @@ function cnsb_theme_preprocess_block(&$variables, $hook) {
 
 function cnsb_theme_preprocess_node(&$vars) {
 
+  // Change "submitted by" to "by".
+  $vars['submitted'] =  t('by !username on !datetime',
+    array('!username' => $vars['name'], '!datetime' => $vars['date'],));
+
+  // Remove the existing "Read More" link.
+  unset($vars['content']['links']['node']['#links']['node-readmore']);
+
+  // Add "Continue Reading" link.
+  $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('
+!title' => $vars['node_url'],));
+
+  // Add a variable for social media share buttons
+  $social_media = "<span class='st_facebook_hcount' displayText='Facebook'></span><span class='st_fblike_hcount' displayText='Facebook Like'></span><span class='st_twitter_hcount' displayText='Tweet'></span><span class='st_pinterest_hcount' displayText='Pinterest'></span><span class='st_email_hcount' displayText='Email'></span><span class='st_sharethis_hcount' displayText='ShareThis'></span>";
+
   if ($vars['type'] == 'blog_post') {
     // Create variables for the user profile bio and picture.
     $user_profile = profile2_load_by_user($vars['uid']);
@@ -233,30 +247,20 @@ function cnsb_theme_preprocess_node(&$vars) {
 
     // Change the date into the following format for blog posts: Friday, Nov 30, 2012
     $vars['date'] = format_date($vars['created'], 'blog_post');
+
+    $vars['social_media'] = $social_media;
   }
-
-  // Change "submitted by" to "by".
-  $vars['submitted'] =  t('by !username on !datetime',
-    array('!username' => $vars['name'], '!datetime' => $vars['date'],));
-
-  // Remove the existing "Read More" link.
-  unset($vars['content']['links']['node']['#links']['node-readmore']);
-
-  // Add "Continue Reading" link.
-  $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('!title' => $vars['node_url'],));
-
-  // Add social media share buttons
-  $social_media = "<span class='st_facebook_hcount' displayText='Facebook'></span><span class='st_fblike_hcount' displayText='Facebook Like'></span><span class='st_twitter_hcount' displayText='Tweet'></span><span class='st_pinterest_hcount' displayText='Pinterest'></span><span class='st_email_hcount' displayText='Email'></span><span class='st_sharethis_hcount' displayText='ShareThis'></span>";
-
-  switch ($vars['type']) {
-    case 'blog_post':
-      $vars['social_media'] = $social_media;
-      break;
-    case 'liturgy_page':
-      $vars['social_media'] = $social_media;
-      break;
-    case 'song':
-      $vars['social_media'] = $social_media;
-      break;
+  elseif ($vars['type'] == 'song') {
+    // Add a boolean flag for existing downloads and products. Useful in the song node template file.
+    if (!empty($vars['field_itunes']) || !empty($vars['field_amazon']) || !empty($vars['field_sellfy']) || !empty($vars['field_bandcamp'])) {
+      $vars['can_buy'] = true;
+    }
+    if (!empty($vars['field_powerpoint']) || !empty($vars['field_chart']) || !empty($vars['field_lead_sheet']) || !empty($vars['field_sheet_music'])) {
+      $vars['can_download'] = true;
+    }
+    $vars['social_media'] = $social_media;
+  }
+  elseif ($vars['type'] == 'liturgy_page') {
+    $vars['social_media'] = $social_media;
   }
 }

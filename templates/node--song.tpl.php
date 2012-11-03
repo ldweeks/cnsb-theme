@@ -136,24 +136,28 @@
       print render($content['field_album']);
       print render($content['field_external_song_page']);
     ?>
-    <div class="buy-music">
-      <h3>Buy</h3>
-      <?php
-        print render($content['field_itunes']);
-        print render($content['field_amazon']);
-        print render($content['field_bandcamp']);
-        print render($content['field_sellfy']);
-      ?>
-    </div>
-    <div class="music-downloads">
-      <h3>Download</h3>
-      <?php
-        print render($content['field_powerpoint']);
-        print render($content['field_chart']);
-        print render($content['field_lead_sheet']);
-        print render($content['field_sheet_music']);
-      ?>
-    </div>
+    <?php if ($can_buy): ?>
+      <div class="buy-music">
+        <h3>Buy</h3>
+        <?php
+          print render($content['field_itunes']);
+          print render($content['field_amazon']);
+          print render($content['field_bandcamp']);
+          print render($content['field_sellfy']);
+        ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($can_download): ?>
+      <div class="music-downloads">
+        <h3>Download</h3>
+        <?php
+          print render($content['field_powerpoint']);
+          print render($content['field_chart']);
+          print render($content['field_lead_sheet']);
+          print render($content['field_sheet_music']);
+        ?>
+      </div>
+    <?php endif; ?>
     <div class="song-info">
       <h3>Song Information</h3>
       <?php
