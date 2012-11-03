@@ -133,22 +133,36 @@
 
   <div class="group-right">
     <?php
-      // Now we print out the content fields that go in the right column.
-      print render($content['field_external_song_page']);
-      print render($content['field_itunes']);
-      print render($content['field_amazon']);
-      print render($content['field_bandcamp']);
-      print render($content['field_sellfy']);
-      print render($content['field_powerpoint']);
-      print render($content['field_chart']);
-      print render($content['field_lead_sheet']);
-      print render($content['field_sheet_music']);
       print render($content['field_album']);
-      print render($content['field_genre']);
-      print render($content['field_key']);
-      print render($content['field_song_tempo']);
-      print render($content['field_theme']);
+      print render($content['field_external_song_page']);
     ?>
+    <div class="buy-music">
+      <h3>Buy</h3>
+      <?php
+        print render($content['field_itunes']);
+        print render($content['field_amazon']);
+        print render($content['field_bandcamp']);
+        print render($content['field_sellfy']);
+      ?>
+    </div>
+    <div class="music-downloads">
+      <h3>Download</h3>
+      <?php
+        print render($content['field_powerpoint']);
+        print render($content['field_chart']);
+        print render($content['field_lead_sheet']);
+        print render($content['field_sheet_music']);
+      ?>
+    </div>
+    <div class="song-info">
+      <h3>Song Information</h3>
+      <?php
+        print render($content['field_genre']);
+        print render($content['field_key']);
+        print render($content['field_song_tempo']);
+        print render($content['field_theme']);
+      ?>
+    </div>
   </div>
 
   <?php if (isset($social_media)): ?>
