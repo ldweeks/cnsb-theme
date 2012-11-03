@@ -113,7 +113,7 @@
     print render($content);
   ?>
   
-  <?php if (isset($social_media)): ?>
+  <?php if (isset($social_media) && $teaser == false): ?>
     <div class="sharethis-buttons">
       <?php print render($social_media); ?>
     </div>
