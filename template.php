@@ -138,6 +138,19 @@ function cnsb_theme_preprocess_html(&$variables, $hook) {
 }
 // */
 
+function cnsb_theme_file_icon($vars) {
+  /*
+  $file = $variables['file'];
+  $icon_directory = drupal_get_path('theme', 'cnsb_theme') . '/images/icons';
+
+  $mime = check_plain($file->filemime);
+
+  $icon_url = file_icon_url($file, $icon_directory);
+  return '<img alt="" class="file-icon" src="' . $icon_url . '" title="' . $mime . '" />';
+  */
+  return '';
+}
+
 /**
  * Override or insert variables into the page templates.
  *
