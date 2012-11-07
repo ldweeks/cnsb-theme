@@ -211,18 +211,36 @@ function cnsb_theme_preprocess_region(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function cnsb_theme_preprocess_block(&$variables, $hook) {
-  // Add a count to all the blocks in the region.
-  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
+  $handle = t('Click to expand');
 
-  // By default, Zen will use the block--no-wrapper.tpl.php for the main
-  // content. This optional bit of code undoes that:
-  //if ($variables['block_html_id'] == 'block-system-main') {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
-  //}
+  if (isset($variables['block']->bid)) {
+    // Filter by genre 
+    if ($variables['block']->bid == 'facetapi-I0yeNBvgRULkchaiqE00dg1Sgh4XMcfd') {
+      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+    }
+    // Filter by theme
+    elseif ($variables['block']->bid == 'facetapi-8tfY1O9dl06CbIFiv0pFign5QRVf0Ch0') {
+      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
+ 'collapsed' => TRUE));
+    }
+    // Filter by key
+    elseif ($variables['block']->bid == 'facetapi-KgeL33xlACTVRvah9t2erBJxhM7AmCVj') {
+      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
+ 'collapsed' => TRUE));
+    }
+    // Filter by contributor
+    elseif ($variables['block']->bid == 'facetapi-JaX0qbSgIAdVdHdLOPgJMOpa5SPe9HEN') {
+      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
+ 'collapsed' => TRUE));
+    }
+    // Filter by tempo
+    elseif ($variables['block']->bid == 'facetapi-YqtVT1gVIEqvQqwyDYdxvL5E9aUqXWQF') {
+      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
+ 'collapsed' => TRUE));
+    }
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
