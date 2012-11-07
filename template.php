@@ -128,15 +128,19 @@ function cnsb_theme_preprocess_maintenance_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function cnsb_theme_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
 
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
+  // This adds classes to the body tag of a page depending on which facet has been selected.
+  $current_adapter = facetapi_adapter_load('search_api@node_index');
+  $active_items = $current_adapter->getAllActiveItems();
+
+  if (!empty($active_items)) {
+    foreach ($active_items as $key => $value) {
+      $class = str_replace(':', '-', $key);
+      $variables['classes_array'][] = $class;
+    }
+  }
 }
-// */
 
 function cnsb_theme_file_icon($vars) {
   /*
