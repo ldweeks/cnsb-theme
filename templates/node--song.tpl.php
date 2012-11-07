@@ -126,6 +126,7 @@
       hide($content['field_key']);
       hide($content['field_song_tempo']);
       hide($content['field_theme']);
+      hide($content['field_tune_name']);
 
       print render($content);
     ?>
@@ -164,6 +165,7 @@
         print render($content['field_genre']);
         print render($content['field_key']);
         print render($content['field_song_tempo']);
+        print render($content['field_tune_name']);
         print render($content['field_theme']);
       ?>
     </div>
