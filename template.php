@@ -143,6 +143,7 @@ function cnsb_theme_preprocess_html(&$variables, $hook) {
 }
 
 function cnsb_theme_file_icon($vars) {
+  // Remove the default icons from the website altogether.
   /*
   $file = $variables['file'];
   $icon_directory = drupal_get_path('theme', 'cnsb_theme') . '/images/icons';
@@ -168,6 +169,7 @@ function cnsb_theme_preprocess_page(&$variables, $hook) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
   }
 
+  // Create a demo variable so that we can move the demo field before the title field.
   $node = menu_get_object();
   if ($node->type == 'song') {
     if (isset($node->field_demo)) {
@@ -218,6 +220,7 @@ function cnsb_theme_preprocess_region(&$variables, $hook) {
 function cnsb_theme_preprocess_block(&$variables, $hook) {
   $variables['ctools_collapsible'] = FALSE;
 
+  // This work is so that I can make the facet blocks fully collapsible.
   if (isset($variables['block']->bid)) {
     // Filter by genre
     if ($variables['block']->bid == 'facetapi-I0yeNBvgRULkchaiqE00dg1Sgh4XMcfd') {
