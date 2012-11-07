@@ -212,32 +212,48 @@ function cnsb_theme_preprocess_region(&$variables, $hook) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function cnsb_theme_preprocess_block(&$variables, $hook) {
-  $handle = t('Click to expand');
+  $variables['ctools_collapsible'] = FALSE;
 
   if (isset($variables['block']->bid)) {
-    // Filter by genre 
+    // Filter by genre
     if ($variables['block']->bid == 'facetapi-I0yeNBvgRULkchaiqE00dg1Sgh4XMcfd') {
-      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $handle = '<h2 class="block-title">Filter by Genre:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+
+      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by theme
     elseif ($variables['block']->bid == 'facetapi-8tfY1O9dl06CbIFiv0pFign5QRVf0Ch0') {
-      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
- 'collapsed' => TRUE));
+      $handle = '<h2 class="block-title">Filter by Theme:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+
+      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by key
     elseif ($variables['block']->bid == 'facetapi-KgeL33xlACTVRvah9t2erBJxhM7AmCVj') {
-      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
- 'collapsed' => TRUE));
+      $handle = '<h2 class="block-title">Filter by Key:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+
+      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by contributor
     elseif ($variables['block']->bid == 'facetapi-JaX0qbSgIAdVdHdLOPgJMOpa5SPe9HEN') {
-      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
- 'collapsed' => TRUE));
+      $handle = '<h2 class="block-title">Filter by Contributor:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+
+      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by tempo
     elseif ($variables['block']->bid == 'facetapi-YqtVT1gVIEqvQqwyDYdxvL5E9aUqXWQF') {
-      $variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'],
- 'collapsed' => TRUE));
+      $handle = '<h2 class="block-title">Filter by Tempo:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+
+      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
   }
 }
