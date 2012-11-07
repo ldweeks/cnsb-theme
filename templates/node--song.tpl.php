@@ -169,6 +169,8 @@
     </div>
   </div>
 
+  <div class="clearfix">&nbsp;</div>
+
   <?php if (isset($social_media)): ?>
     <div class="sharethis-buttons">
       <?php print render($social_media); ?>
