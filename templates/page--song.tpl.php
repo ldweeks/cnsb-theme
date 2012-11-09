@@ -164,6 +164,7 @@
   
 
 </div><!-- /#page -->
+<div id="MainFooter">
 <?php print render($page['footer']); ?>
 <span class='st_facebook_hcount' displayText='Facebook'></span>
 <span class='st_fblike_hcount' displayText='Facebook Like'></span>
@@ -185,6 +186,6 @@
 	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 </form>
 </div>
-
+</div>
 <!--End mc_embed_signup-->
 <?php print render($page['bottom']); ?>
