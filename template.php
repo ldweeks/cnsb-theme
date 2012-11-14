@@ -219,7 +219,7 @@ function cnsb_theme_preprocess_region(&$variables, $hook) {
  */
 function cnsb_theme_preprocess_block(&$variables, $hook) {
   $variables['ctools_collapsible'] = FALSE;
-
+  
   // This work is so that I can make the facet blocks fully collapsible.
   if (isset($variables['block']->bid)) {
     // Filter by genre
@@ -227,40 +227,51 @@ function cnsb_theme_preprocess_block(&$variables, $hook) {
       $handle = '<h2 class="block-title">Filter by Genre:</h2>';
       $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
       $variables['ctools_collapsible'] = TRUE;
-
-      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by theme
     elseif ($variables['block']->bid == 'facetapi-8tfY1O9dl06CbIFiv0pFign5QRVf0Ch0') {
       $handle = '<h2 class="block-title">Filter by Theme:</h2>';
       $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
       $variables['ctools_collapsible'] = TRUE;
-
-      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by key
     elseif ($variables['block']->bid == 'facetapi-KgeL33xlACTVRvah9t2erBJxhM7AmCVj') {
       $handle = '<h2 class="block-title">Filter by Key:</h2>';
       $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
       $variables['ctools_collapsible'] = TRUE;
-
-      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by contributor
     elseif ($variables['block']->bid == 'facetapi-JaX0qbSgIAdVdHdLOPgJMOpa5SPe9HEN') {
       $handle = '<h2 class="block-title">Filter by Contributor:</h2>';
       $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
       $variables['ctools_collapsible'] = TRUE;
-
-      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
     }
     // Filter by tempo
     elseif ($variables['block']->bid == 'facetapi-YqtVT1gVIEqvQqwyDYdxvL5E9aUqXWQF') {
       $handle = '<h2 class="block-title">Filter by Tempo:</h2>';
       $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
       $variables['ctools_collapsible'] = TRUE;
+    }
 
-      //$variables['content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+// Blog Blocks
+
+    // Filter by blog tags
+    elseif ($variables['block']->bid == 'facetapi-NYdFeeCQGTggI1hEklYUQsvL5HHSvq5K') {
+      $handle = '<h2 class="block-title">Filter by Blog Tags:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+    }
+    // Filter by date created
+    elseif ($variables['block']->bid == 'facetapi-6NILbvqD1zpW1Fd6w9agY0q6ZLORxAcU') {
+      $handle = '<h2 class="block-title">Filter by Date Created:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
+    }
+    // Filter by author
+    elseif ($variables['block']->bid == 'facetapi-jlCM2BODWBoJXetFfMzUEZjUrj1Tso0J') {
+      $handle = '<h2 class="block-title">Filter by Author:</h2>';
+      $variables['title_and_content'] = theme('ctools_collapsible', array('handle' => $handle, 'content' => $variables['content'], 'collapsed' => TRUE));
+      $variables['ctools_collapsible'] = TRUE;
     }
   }
 }
