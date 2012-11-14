@@ -139,6 +139,10 @@ if ($fields['type']->handler->original_value == 'song') {
 else {
   // Default markup, used for blog posts.
   foreach ($fields as $id => $field) {
+    // do not print out the node type field.
+    if ($id == 'type') {
+      continue;
+    }
     if (!empty($field->separator)) {
       print $field->separator;
     }
