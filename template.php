@@ -295,8 +295,7 @@ function cnsb_theme_preprocess_node(&$vars) {
   unset($vars['content']['links']['node']['#links']['node-readmore']);
 
   // Add "Continue Reading" link.
-  $vars['continue_reading'] = t('<span class="continue-reading"> <a href="!title">Continue Reading</a> </span>', array('
-!title' => $vars['node_url'],));
+  $vars['continue_reading'] = t('<span class="continue-reading"> <a href="@title">Continue Reading</a> </span>', array('@title' => $vars['node_url'],));
 
   // Add a variable for social media share buttons
   $social_media = "<span class='st_facebook_hcount' displayText='Facebook'></span><span class='st_fblike_hcount' displayText='Facebook Like'></span><span class='st_twitter_hcount' displayText='Tweet'></span><span class='st_pinterest_hcount' displayText='Pinterest'></span><span class='st_email_hcount' displayText='Email'></span><span class='st_sharethis_hcount' displayText='ShareThis'></span>";
