@@ -126,9 +126,7 @@
         <?php print render($profile2_bio); ?>
       </div>
     <?php endif; ?>
-  <?php endif; ?>
-
-  <?php if ($teaser == true): ?>
+  <?php else: ?>
     <?php print $continue_reading; ?>
   <?php endif; ?>
 
