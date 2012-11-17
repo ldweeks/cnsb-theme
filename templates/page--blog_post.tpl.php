@@ -144,9 +144,6 @@
 <!-- /#page -->
 
 <div id="MainFooter">
-  <div id="AboveFooter">
-    <div class="footerShare"> <span class='st_facebook_hcount' displayText='Facebook'></span> <span class='st_fblike_hcount' displayText='Facebook Like'></span> <span class='st_twitter_hcount' displayText='Tweet'></span> <span class='st_pinterest_hcount' displayText='Pinterest'></span> <span class='st_email_hcount' displayText='Email'></span> <span class='st_sharethis_hcount' displayText='ShareThis'></span> </div>
-  </div>
   <div id="FooterLower"> 
     <?php print render($page['footer']); ?>
     <div class="mailChimpFooter"> 

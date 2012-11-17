@@ -114,16 +114,15 @@
   ?>
 
   <?php if ($teaser == false): ?>
-    <?php if (isset($social_media)): ?>
-      <div class="sharethis-buttons">
-        <?php print render($social_media); ?>
-      </div>
-    <?php endif; ?>
-
     <?php if (isset($profile2_bio) || isset($profile2_pic)): ?>
       <div class="author-profile">
         <?php print render($profile2_pic); ?>
         <?php print render($profile2_bio); ?>
+      </div>
+    <?php endif; ?>
+    <?php if (isset($social_media)): ?>
+      <div class="sharethis-buttons">
+        <?php print render($social_media); ?>
       </div>
     <?php endif; ?>
   <?php else: ?>

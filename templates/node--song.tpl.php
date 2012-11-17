@@ -84,7 +84,6 @@
  */
 ?>
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix ds-2col-fluid"<?php print $attributes; ?>>
-  <?php //kpr($content); ?>
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
     <header>
       <?php print render($title_prefix); ?>
@@ -111,7 +110,7 @@
       // We hide stuff now so that we can render it later.
       hide($content['comments']);
       hide($content['links']);
-      hide($content['field_demo']);
+      //hide($content['field_demo']);
       hide($content['field_external_song_page']);
       hide($content['field_itunes']);
       hide($content['field_amazon']);
@@ -129,6 +128,7 @@
       hide($content['field_tune_name']);
 
       print render($content);
+      //print render($content['field_demo']);
     ?>
   </div>
 
