@@ -76,9 +76,14 @@ h2 a:hover{
 	display:block;
 	position:fixed;
 	width:100%;
-	z-index:999;
+	z-index:9999;
 	top:0;
 	right:0;
+	border-top:2px solid #5fa7b9;
+}
+
+.logged-in #header .donate{
+	z-index:1;
 }
 
 #header .donate .donateIcon{
@@ -165,7 +170,7 @@ body, html{
 
 #MainFooter{
 	background:url(../images/background_main-darken.jpg) repeat-x;
-	background-position:0px 50px;
+	background-position:0px 45px;
 	border-bottom:7px solid #78423a;
 }
 
@@ -181,8 +186,6 @@ body, html{
 	font-family:"Myriad Pro", "Myriad", Arial;
 	width:920px;
 	margin:0 auto;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
 }
 
 #MainFooter #FooterLower a:hover{
@@ -286,6 +289,15 @@ body, html{
 
 /* Page Override */
 
+.section-songbook h3, 
+.section-songbook h3 a{
+	font-family:"Myriad Pro", verdana, sans-serif;
+	color:#763f39;
+}
+
+.section-songbook h3 a:hover{
+	color:#5a261f;
+}
 
 .global-filter .form-item.form-type-textfield {
 	position:relative;
@@ -402,7 +414,7 @@ body, html{
 	margin:0;
 }
 
-#page header{
+#page #header{
 	background:url(../images/BannerBack_main.jpg) top center repeat-x;
 	height:188px;
 	position:relative;
@@ -627,11 +639,25 @@ body, html{
 	
 }
 
+.sidebar-first.section-liturgy #content{
+	margin-right:0;
+    width: 70%;
+	margin-left:0;
+	float:right;
+}
+
 .sidebar-first .region-sidebar-first{
     margin-left: -28%;
     width: 28%;
 	margin-right:0;
 	float:right;
+}
+
+.sidebar-first.section-liturgy .region-sidebar-first{
+	margin-right:0;
+    width: 28%;
+	margin-left:0;
+	float:left;
 }
 
 .sidebar-second #content {
@@ -664,7 +690,7 @@ aside .videoCaption{
 
 .front h1{
 	font-size:16px;
-	background:#8d623b;
+	background:#75403a;
 	margin:-7px 0 12px 0;
 	text-transform:none;
 	padding-left:1100px;
@@ -749,9 +775,28 @@ hr{
 	border:1px dotted #CCCCCC;
 }
 
+/* Lyrics */
+
+/* Liturgy */
+
+.section-liturgy aside h2{
+	font-size:16px;
+	background:#75403a;
+	margin:-7px 110px 12px 0;
+	text-transform:none;
+	padding-left:1100px;
+	margin-left:-1100px;
+	color:#FFFFFF;
+	border-bottom-right-radius:20px;
+	border-top:2px solid #824d2c;
+}
+
+
+
 /* Blog */
 
-.node-type-blog-post #AboveFooter{
+.node-type-blog-post #AboveFooter,
+.section-liturgy .sharethis-buttons{
 	display:none;
 }
 
@@ -847,6 +892,77 @@ section.comments .form-actions input#edit-preview{
 	font-size:.9em;
 }
 
+.section-blog .author-profile{
+	background:#FFFFFF;
+	padding:10px;
+	color:#666666;
+	margin-bottom:20px;
+	border-bottom-left-radius:9px;
+	min-height:45px;
+	border-top:6px solid #5fa7b9;
+	
+}
+
+.section-blog .author-profile a{
+	
+}
+
+.section-blog .author-profile .field-type-image{
+	width:59px;
+	display:block;
+	float:left;
+}
+
+.section-blog .author-profile .field-type-image img{
+	border:2px solid #FFFFFF;
+	border-bottom-left-radius:9px;
+}
+
+.section-blog .author-profile .field-name-field-bio{
+	display:block;
+	width:auto;
+	margin-left:59px;
+}
+
+.section-blog .author-profile .field-name-field-bio p{
+	margin:0 0 10px 0;
+}
+	
+
+/* Blog Search */
+
+.section-blog-tags .views-field-title{
+	font-size:18pt;
+	text-transform:uppercase;
+	margin:20px 0 10px 0;
+}
+
+.section-blog-tags .views-row-first .views-field-title{
+	margin:0 0 10px 0;
+}
+
+.section-blog-tags .views-field-author, 
+.section-blog-tags .views-field-created,
+.page-blog-blog-search .views-field-author, 
+.page-blog-blog-search .views-field-created{
+	color: #999999;
+    font-family: "Myriad Pro","Myriad",Verdana,Geneva,sans-serif;
+    font-size: 0.9em;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.section-blog-tags .views-field-body p{
+	margin-top:0;
+}
+
+.page-blog-blog-search .views-field-title h2,
+.page-blog-blog-search .views-field-title h2 a{
+	font-style:normal;
+	text-transform:uppercase;
+	margin:0;
+}
+
 /* Songbook Section Styles */
 
 
@@ -894,11 +1010,11 @@ section.comments .form-actions input#edit-preview{
 	border:2px solid #EFEFEF;
 }
 
-.song .ui360.ui360-vis{
+.page-songbook .song .ui360.ui360-vis{
 	position:relative;
 }
 
-.song .sm2-360ui{
+.page-songbook .song .sm2-360ui{
 	position:absolute;
 	margin:-10px 0 0 -10px;
 
@@ -908,6 +1024,10 @@ section.comments .form-actions input#edit-preview{
 	position:absolute;
 	top:29px;
 	left:15px;
+}
+
+.page-taxonomy .song .views-field-field-demo{
+	top:6px;
 }
 
 .sm2-timing{
@@ -1151,17 +1271,34 @@ blockquote.blog-intro p:before
 /* Song Details Page */
 
 .node-type-song .field-name-field-demo{
-	width:60px;
-	overflow:hidden;
 	display:block;
-	position:absolute;
-	top:22px;
-	left:-27px;
+}
+
+.logged-in .node-type-song .field-name-field-demo{
+	display:block;
 }
 
 .node-type-song h1{
 	background:none;
 	padding-left:15px;
+}
+
+.node-type-song .field-name-field-lyrics{
+	border-top:1px dotted #CCC;
+	padding-top:15px;
+}
+
+
+.node-type-song div.jp-audio div.jp-type-playlist div.jp-progress {
+    left: 104px;
+	width:172px;
+}
+
+
+.node-type-song div.jp-audio div.jp-type-playlist div.jp-current-time, 
+.node-type-song div.jp-audio div.jp-type-playlist div.jp-duration {
+    left: 104px;
+    width: 172px;
 }
 
 .section-song #content.column p{
@@ -1380,4 +1517,58 @@ em{
 
 .messages.error{
 	display:none;
+}
+
+/* Section Player */
+
+.section-player{
+
+}
+
+.section-player article{
+	padding-bottom:160px;
+	border-bottom:0;
+
+}
+
+.section-player #media-player{
+	width:500px;
+	margin:0 auto;
+}
+
+.section-player #media-player div.jp-interface,
+.node-type-song div.jp-interface{
+	border:none;
+	background:none;
+}
+
+
+.section-player #media-player div.jp-playlist{
+	border: 1px solid #009BE3;
+}
+
+.node-type-song  div.jp-playlist{
+	display:none;
+}
+
+
+.node-type-song div.jp-audio div.jp-type-playlist div.jp-interface {
+	position:absolute;
+	left:-27px;
+}
+
+.node-type-song div.jp-audio .jp-stop{
+	display:none;
+}
+
+.node-type-song .field-name-field-demo{
+	height:55px;
+}
+
+.node-type-song .field-name-field-scripture-reference {
+    margin-bottom: -20px;
+}
+
+.section-player #media-player div.jp-playlist li:hover{
+	background:#EFEFEF;
 }
