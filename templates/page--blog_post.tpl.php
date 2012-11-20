@@ -132,6 +132,7 @@
     <aside class="sidebars"> <?php print $sidebar_first; ?> <?php print $sidebar_second; ?> </aside>
     <!-- /.sidebars -->
     <?php endif; ?>
+    <div class="clearfix">&nbsp;</div>
   </div>
   <!-- /#main --> 
   
