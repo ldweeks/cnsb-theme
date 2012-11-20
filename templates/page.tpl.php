@@ -72,12 +72,7 @@
 
 <div id="page">
   <header id="header" role="banner">
-    <div class="donate"><div class="donateIcon"><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="F584N4Z3EP8VJ">
-<input type="image" src="http://clearnotesongbook.com/sites/clearnotesongbook.com/files/images/giveButton.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></div></div>
+    <div class="donate"><div class="donateIcon"><a href="<?php print base_path() . 'support-songbook'; ?>"><img src="http://clearnotesongbook.com/sites/clearnotesongbook.com/files/cnsb/images/giveButton.png"></a></div></div>
     <div class="headerContainer">
       <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
