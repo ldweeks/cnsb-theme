@@ -7,6 +7,8 @@ body{
 	font-size:14px;
 	line-height:22px;
 	background:url(../images/background_main-light.jpg);
+	min-width:960px;
+	
 }
 
 a{
@@ -24,6 +26,7 @@ h1, h1 a{
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-style:italic;
 	font-size:24pt;
+	line-height:32pt;
 	font-weight:normal;
 	color:#5fa7b9;
 	text-decoration:none;
@@ -139,9 +142,10 @@ body, html{
 #page{
 	min-height:100%;
 	position: relative;
-	min-width:100%;
+	min-width:960px;
 	display:block;
 	clear:both;
+	background:url(../images/BannerBack_main.jpg) top center repeat-x;
 	
 }
 
@@ -363,6 +367,7 @@ body, html{
 }
 
 #page {
+	
 }
 
 #page #main{
@@ -378,7 +383,7 @@ body, html{
 } 
 
 #page .aboveMain{
-	min-width:100%;
+	min-width:960px;
 	border-top:6px solid #2f9bb7;
 	background:url(../images/background_main.jpg);
 }
@@ -415,7 +420,6 @@ body, html{
 }
 
 #page #header{
-	background:url(../images/BannerBack_main.jpg) top center repeat-x;
 	height:188px;
 	position:relative;
 	width:auto;
@@ -630,10 +634,11 @@ body, html{
 .front.one-sidebar #content .field-name-body img, 
 .page-blog #content .field-name-body img{
 	max-width:180px;
+	height:auto;
 }
 
 .sidebar-first #content {
-    margin-right: 30%;
+	float:left;
     width: 70%;
 	margin-left:0;
 	
@@ -647,9 +652,9 @@ body, html{
 }
 
 .sidebar-first .region-sidebar-first{
-    margin-left: -28%;
+
     width: 28%;
-	margin-right:0;
+
 	float:right;
 }
 
@@ -661,12 +666,12 @@ body, html{
 }
 
 .sidebar-second #content {
-    margin-right: -70%;
+   	float:left;
     width: 70%;
 }
 
 .sidebar-second .region-sidebar-second {
-    margin-left: 74%;
+    float:right;
     width: 26%;
 }
 
@@ -1324,6 +1329,7 @@ em{
 
 .section-song .node-song .group-left .field{
 	padding-left:15px;
+	position:relative;
 }
 
 .section-song .node-song .group-left .field-name-field-description{
@@ -1347,10 +1353,11 @@ em{
 
 .section-song .node-song .group-right{
 	width:260px;
-	padding:20px;
+	padding:20px 20px 20px 20px;
+
 	background:url(../images/background_main-lighter.jpg);
 	border-top-left-radius:10px;
-	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
 	box-shadow:0 3px 5px #999999;
 	float:right;
 }
@@ -1454,10 +1461,12 @@ em{
 	display:inline-block;
 	margin-right:15px;
 	max-width:200px;
+	height:auto;
 }
 
 .view-store .views-field-field-cnsb-product-image img{
 	max-width:100%;
+	height:auto;
 }
 
 .view-store .views-row{
@@ -1570,4 +1579,8 @@ em{
 
 .section-player #media-player div.jp-playlist li:hover{
 	background:#EFEFEF;
+}
+
+.section-player #page{
+	background:none;
 }
