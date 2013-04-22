@@ -8,7 +8,7 @@ body{
 	line-height:22px;
 	background:url(../images/background_main-light.jpg);
 	min-width:960px;
-	
+
 }
 
 a{
@@ -19,7 +19,7 @@ a{
 a:hover{
 	color:#8b3215;
 	text-decoration:none;
-	
+
 }
 
 h1, h1 a{
@@ -39,7 +39,7 @@ h1 a:hover{
 	color:#8b3215;
 	text-decoration:underline;
 }
-		
+
 
 h2, h2 a{
 	font-size:18pt;
@@ -55,7 +55,7 @@ h2 a:hover{
 }
 
 #content.column p{
-	
+
 }
 
 /* Header Override */
@@ -104,7 +104,7 @@ h2 a:hover{
 	background:url(../images/Note_icon.jpg) right no-repeat #973a14;
 	padding:3px 22px 3px 6px;
 	border-radius:2px;
-	z-index:999;	
+	z-index:999;
 }
 
 #header .headPlayer:hover, #header .headPlayer a:hover{
@@ -136,7 +136,7 @@ h2 a:hover{
 
 body, html{
 	height:100%;
-	
+
 }
 
 #page{
@@ -146,7 +146,7 @@ body, html{
 	display:block;
 	clear:both;
 	background:url(../images/BannerBack_main.jpg) top center repeat-x;
-	
+
 }
 
 * html #page{
@@ -155,7 +155,7 @@ body, html{
 
 #main{
 	padding-bottom: 9em;
-	
+
 
 }
 
@@ -293,7 +293,7 @@ body, html{
 
 /* Page Override */
 
-.section-songbook h3, 
+.section-songbook h3,
 .section-songbook h3 a{
 	font-family:"Myriad Pro", verdana, sans-serif;
 	color:#763f39;
@@ -367,20 +367,20 @@ body, html{
 }
 
 #page {
-	
+
 }
 
 #page #main{
 	width:960px;
 	margin:0 auto;
 	padding-top:20px;
-} 
+}
 
 .front #page #main{
 	padding-top:0;
 	margin:10px auto 0 auto;
 
-} 
+}
 
 #page .aboveMain{
 	min-width:960px;
@@ -400,7 +400,7 @@ body, html{
 	margin:0 auto;
 	width:960px;
 	padding:2px 0;
-	
+
 }
 
 #page .aboveMain .breadcrumb li{
@@ -455,7 +455,7 @@ body, html{
     position:relative;
     width:960px;
 	margin:0 auto;
-	
+
 }
 
 #page #header #navigation .region-navigation{
@@ -463,9 +463,9 @@ body, html{
 }
 
 #page #header #navigation ul.menu{
-	
+
 	min-width:100%;
-	
+
 }
 
 #page #header #navigation ul.menu li{
@@ -476,20 +476,20 @@ body, html{
 	float:none;
 	position:relative;
 	width:auto;
-	
+
 }
 
 #page #header #navigation ul.menu li.first{
-	
+
 
 }
 
 #page #header #navigation ul.menu li a{
 	display:block;
-	
+
 	position:relative;
 	width:auto;
-	padding:12px 41px;
+	padding:12px 38px;
 	color:#FFFFFF;
 	font-size:13px;
 	font-family:"Myriad Pro", "Myriad", Arial, Helvetica, sans-serif;
@@ -506,7 +506,7 @@ body, html{
 }
 
 #page #header #navigation ul.menu li a:hover{
-	color:#FFFFFF;	
+	color:#FFFFFF;
 	background:url(../images/menu-h2-main.png) top repeat-x;
 
 }
@@ -517,7 +517,7 @@ body, html{
 }
 
 #page #header #navigation ul.menu li#menu-437-1 li a:hover{
-	color:#2f9bb7;	
+	color:#2f9bb7;
 }
 
 #page #header #navigation ul.menu li#menu-437-1 a.sf-depth-1.active{
@@ -535,7 +535,7 @@ body, html{
 
 #page #header #navigation ul.menu li li{
     background:#FFFFFF;
-	
+
 }
 
 #page #header #navigation ul.menu li li a{
@@ -557,22 +557,22 @@ body, html{
 	min-height:240px;
 	background:#EFEFEF;
 	box-shadow:0px 3px 5px #999999;
-	
+
 }
 
 .aboveMain table td .views-field-field-featured-image{
-	
+
 	margin-bottom:10px;
 	border-bottom:3px solid #CCCCCC;
 }
 
 .aboveMain table td .views-field-field-featured-image img{
-	
+
 }
 
 .aboveMain table td .views-field-title{
 	position:absolute;
-	top:5px; 
+	top:5px;
 	left:5px;
 	font-family:Arial, Helvetica, sans-serif;
 	text-transform:uppercase;
@@ -621,7 +621,7 @@ body, html{
     margin: -20px 0 0 28px;
 }
 
-.front.one-sidebar #content .field-name-body, 
+.front.one-sidebar #content .field-name-body,
 .page-blog #content .field-name-body{
 	background:none;
 	padding:inherit;
@@ -631,7 +631,7 @@ body, html{
 	padding-bottom:0;
 }
 
-.front.one-sidebar #content .field-name-body img, 
+.front.one-sidebar #content .field-name-body img,
 .page-blog #content .field-name-body img{
 	max-width:180px;
 	height:auto;
@@ -641,7 +641,7 @@ body, html{
 	float:left;
     width: 70%;
 	margin-left:0;
-	
+
 }
 
 .sidebar-first.section-liturgy #content{
@@ -708,7 +708,7 @@ aside .videoCaption{
 .front .sidebars .aboutImage{
 	margin:0px 0 -10px 0;
 	border-top:2px solid #1d829c;
-	
+
 }
 
 .front .sidebars .aboutImage img{
@@ -823,7 +823,7 @@ hr{
 	line-height:24px;
 	padding-right:100px;
 	padding-bottom:10px;
-} 
+}
 
 .view-blog-not-search article .image-left,
 .front article .image-left{
@@ -905,11 +905,11 @@ section.comments .form-actions input#edit-preview{
 	border-bottom-left-radius:9px;
 	min-height:45px;
 	border-top:6px solid #5fa7b9;
-	
+
 }
 
 .section-blog .author-profile a{
-	
+
 }
 
 .section-blog .author-profile .field-type-image{
@@ -932,7 +932,7 @@ section.comments .form-actions input#edit-preview{
 .section-blog .author-profile .field-name-field-bio p{
 	margin:0 0 10px 0;
 }
-	
+
 
 /* Blog Search */
 
@@ -946,9 +946,9 @@ section.comments .form-actions input#edit-preview{
 	margin:0 0 10px 0;
 }
 
-.section-blog-tags .views-field-author, 
+.section-blog-tags .views-field-author,
 .section-blog-tags .views-field-created,
-.page-blog-blog-search .views-field-author, 
+.page-blog-blog-search .views-field-author,
 .page-blog-blog-search .views-field-created{
 	color: #999999;
     font-family: "Myriad Pro","Myriad",Verdana,Geneva,sans-serif;
@@ -991,8 +991,8 @@ section.comments .form-actions input#edit-preview{
 
 
 .sm2-canvas,
-.ui360-vis .sm2-360btn, 
-.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn, 
+.ui360-vis .sm2-360btn,
+.ui360-vis .sm2-360ui.sm2_paused .sm2-360btn,
 .ui360-vis .sm2-360ui.sm2_playing .sm2-360btn{
 	width:25px !important;
 	height:25px !important;
@@ -1040,7 +1040,7 @@ section.comments .form-actions input#edit-preview{
 	font-size:12px !important;
 	color:#999999;
 	margin-left:12px !important;
-	
+
 }
 
 .song .views-field-title{
@@ -1070,12 +1070,12 @@ section.comments .form-actions input#edit-preview{
 }
 
 #block-views-exp-song-search-results-page,
-#block-views-exp-blog-search-results-page, 
+#block-views-exp-blog-search-results-page,
 #block-current-search-standard{
 	background:url(../images/background_main-dark.jpg);
 	padding:10px;
 	margin-bottom:0;
-	
+
 }
 
 #block-views-exp-song-search-results-page,
@@ -1170,7 +1170,7 @@ section.comments .form-actions input#edit-preview{
 .sidebars .sidebar .block-facetapi{
 	margin:0;
 	background:#FFFFFF;;
-	
+
 }
 
 .sidebars .sidebar .block-facetapi h2,
@@ -1222,7 +1222,7 @@ section.comments .form-actions input#edit-preview{
 .image-left, img.image-left{
 	float:left;
 	margin:0 10px 10px 0;
-	
+
 }
 .image-left img{
 	border-top-left-radius:5px;
@@ -1236,7 +1236,7 @@ blockquote{
 	background:#FFFFFF;
 	box-shadow:3px 0 5px #CCCCCC;
 	font-family:Georgia, "Times New Roman", Times, serif;
-	
+
 }
 
 blockquote p{
@@ -1266,7 +1266,7 @@ blockquote.blog-intro p{
 
 blockquote.blog-intro p:before
 {
-	content:'\201C'; 
+	content:'\201C';
 	font-size:800%;
 	display:inline-block;
 	margin:40px 5px -20px -22px;
@@ -1300,7 +1300,7 @@ blockquote.blog-intro p:before
 }
 
 
-.node-type-song div.jp-audio div.jp-type-playlist div.jp-current-time, 
+.node-type-song div.jp-audio div.jp-type-playlist div.jp-current-time,
 .node-type-song div.jp-audio div.jp-type-playlist div.jp-duration {
     left: 104px;
     width: 172px;
@@ -1316,15 +1316,15 @@ blockquote.blog-intro p:before
 }
 
 em{
-	
-	
+
+
 }
 
 .section-song .node-song .group-left{
 	width:640px;
 	margin-top:-20px;
 	float:left;
-	
+
 }
 
 .section-song .node-song .group-left .field{
@@ -1380,7 +1380,7 @@ em{
 .section-song .node-song .group-right .field-name-field-demo .ui360.ui360-vis{
 	margin:0;
 	overflow:hidden;
-	
+
 }
 .section-song .sm2-inline-list .ui360-vis .sm2-360ui {
     border:none;
@@ -1426,7 +1426,7 @@ em{
 
 .section-song .node-song .group-right .field-name-field-sheet-music a{
 	background:url(../images/Icon_Strings.png) left no-repeat;
-	padding:3px 0 3px 30px; 
+	padding:3px 0 3px 30px;
 }
 
 .section-song .field-name-field-copyright-and-licence{
