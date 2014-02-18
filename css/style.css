@@ -631,11 +631,13 @@ body, html{
 	padding-bottom:0;
 }
 
+/* Hidden by Lucas on 2/18/14
 .front.one-sidebar #content .field-name-body img,
 .page-blog #content .field-name-body img{
 	max-width:180px;
 	height:auto;
 }
+*/
 
 .sidebar-first #content {
 	float:left;
@@ -839,7 +841,7 @@ hr{
 
 .front article .embedded-video iframe{
 	width:90%;
-	height:auto;
+/*	height:auto; */
 }
 
 .node-type-blog-post article .submitted{
